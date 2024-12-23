@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+	font-family: 'Source Sans Pro';
+}
+
+main#dashboard-main::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+main#dashboard-main::-webkit-scrollbar-thumb {
+	border-radius: 9999px;
+	background-color: rgb(156 163 175 / 0.75);
+}
+
+main#dashboard-main::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgb(156 163 175 / 0.75);
+	border-radius: 10px;
+}
+
+.mapboxgl-popup-content {
+	background: #384151 !important
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+	border-top-color: #384151 !important;
+}
+
+@layer components {
+	input[type=range] {
+		@apply appearance-none bg-transparent;
+	}
+
+	input[type=range]::-webkit-slider-runnable-track {
+		@apply bg-black/25 rounded-full;
+	}
+
+	input[type=range]::-moz-range-track {
+		@apply bg-black/25 rounded-full;
+	}
+
+	input[type=range]::-ms-track {
+		@apply bg-black/25 rounded-full;
+	}
+}
+
+
+.my-popup-content {
+	margin: auto;
+	background: rgb(183, 0, 0);
+	width: 50%;
+	padding: 5px;
+}
+
+.my-popup-arrow {
+	color: rgb(176, 0, 0);
+}
+
+[role='tooltip'].my-popup-content {
+	width: 200px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.my-popup-overlay {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+[data-popup='tooltip'].my-popup-overlay {
+	background: transparent;
+}
+
+
+@media only screen and (min-width: 768px) {
+	.hide-on-desktop {
+		display: none;
+	}
+}
+
+/* hide component when screen is less than 768px */
+@media only screen and (max-width: 768px) {
+	.hide-on-mobile {
+		display: none;
+	}
+}
